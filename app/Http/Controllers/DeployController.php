@@ -8,6 +8,7 @@ class DeployController extends Controller
 {
     public function deploy(Request $request)
     {
+        dd($request);
         $commands = ['cd /home/wwwroot/default/alilang', 'git pull'];
         $signature = $request->header('X-Hub-Signature');
         $payload = file_get_contents('php://input');
