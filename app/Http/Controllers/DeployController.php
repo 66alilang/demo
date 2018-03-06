@@ -25,4 +25,9 @@ class DeployController extends Controller
     {
         return 'sha1=' . hash_hmac('sha1', $payload, env('GITHUB_DEPLOY_TOKEN'), false) === $signature;
     }
+
+    public function test()
+    {
+        dd('route test');
+    }
 }
