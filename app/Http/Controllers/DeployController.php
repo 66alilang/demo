@@ -8,7 +8,7 @@ class DeployController extends Controller
 {
     public function deploy(Request $request)
     {
-        $commands = ['cd /home/wwwroot/default/alilang', 'git pull'];
+        $commands = ['cd /data/wwwroot/demo', 'git pull'];
         $signature = $request->header('X-Hub-Signature');
         $payload = file_get_contents('php://input');
         if ($this->isFromGithub($payload, $signature)) {
